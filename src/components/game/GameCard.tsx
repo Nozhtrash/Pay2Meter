@@ -14,7 +14,7 @@ interface GameCardProps {
 
 export function GameCard({ game }: GameCardProps) {
   return (
-    <Card className="flex h-full w-full flex-col overflow-hidden border-border/60 bg-card transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+    <Card className="rounded-2xl dark:bg-gradient-to-br dark:from-neutral-900 dark:to-black bg-gradient-to-br from-neutral-100 to-white flex h-full w-full flex-col overflow-hidden border-2 border-neutral-800 dark:border-yellow-400 hover:border-neutral-700 dark:hover:border-yellow-300 hover:shadow-lg dark:hover:shadow-yellow-400/20 transition-all">
       <div className="flex-grow flex flex-col">
         <CardHeader className="p-0">
           <div className="relative aspect-video">

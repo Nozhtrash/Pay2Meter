@@ -140,7 +140,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {news.slice(0, 6).map((item) => (
                     <a href={item.sourceUrl} key={item.id} target="_blank" rel="noopener noreferrer" className="group">
-                        <Card className="overflow-hidden h-full flex flex-col transition-all border-border/60 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+                        <Card className="rounded-2xl dark:bg-gradient-to-br dark:from-neutral-900 dark:to-black bg-gradient-to-br from-neutral-100 to-white overflow-hidden h-full flex flex-col transition-all border-2 border-neutral-800 dark:border-yellow-400 hover:border-neutral-700 dark:hover:border-yellow-300 hover:shadow-lg dark:hover:shadow-yellow-400/20">
                         <div className="relative w-full aspect-video">
                                 <Image src={item.imageUrl} alt={item.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint="news article" />
                             </div>
@@ -174,7 +174,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {freeGames.slice(0, 6).map(game => (
                     <a href={game.url} key={game.id} target="_blank" rel="noopener noreferrer" className="group">
-                        <Card className="overflow-hidden h-full flex flex-col transition-all border-border/60 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+                        <Card className="rounded-2xl dark:bg-gradient-to-br dark:from-neutral-900 dark:to-black bg-gradient-to-br from-neutral-100 to-white overflow-hidden h-full flex flex-col transition-all border-2 border-neutral-800 dark:border-yellow-400 hover:border-neutral-700 dark:hover:border-yellow-300 hover:shadow-lg dark:hover:shadow-yellow-400/20">
                             <div className="relative w-full aspect-video">
                                 <Image src={game.imageUrl} alt={game.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint="free game" />
                             </div>
