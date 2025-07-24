@@ -1,0 +1,21 @@
+# Este workflow se despliega en Firebase App Hosting en cada push a la rama main
+# Para más información, visita https://firebase.google.com/docs/hosting/github-integration?hl=es-419
+
+name: Deploy to Firebase App Hosting on merge
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAY2METER_STUDIO }}'
+          channelId: live
+          projectId: pay2meter-studio
