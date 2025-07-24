@@ -77,7 +77,7 @@ export default function Home() {
         </p>
       </div>
 
-      {postsLoading ? null : latestPost ? (
+      {postsLoading && !latestPost ? <Skeleton className="h-24 w-full" /> : latestPost ? (
         <section className="mb-12">
             <Card className="border-primary/40 bg-secondary/20 hover:border-primary/80 transition-all">
                 <CardContent className="p-6 flex flex-col md:flex-row items-center gap-6">
@@ -101,30 +101,22 @@ export default function Home() {
                 <TabsTrigger value="android">Top Android Abusivos</TabsTrigger>
             </TabsList>
             <TabsContent value="pc">
-                {(gamesLoading && allGamesFromHook.length === 0) ? (
-                    <GameGridSkeleton />
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {pcGames.slice(0,6).map((game) => (
-                            <div key={game.id} onClick={() => handleGameClick(game)} className="cursor-pointer">
-                                <GameCard game={game} />
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {pcGames.slice(0,6).map((game) => (
+                        <div key={game.id} onClick={() => handleGameClick(game)} className="cursor-pointer">
+                            <GameCard game={game} />
+                        </div>
+                    ))}
+                </div>
             </TabsContent>
             <TabsContent value="android">
-                {(gamesLoading && allGamesFromHook.length === 0) ? (
-                    <GameGridSkeleton />
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {androidGames.slice(0,6).map((game) => (
-                            <div key={game.id} onClick={() => handleGameClick(game)} className="cursor-pointer">
-                                <GameCard game={game} />
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {androidGames.slice(0,6).map((game) => (
+                        <div key={game.id} onClick={() => handleGameClick(game)} className="cursor-pointer">
+                            <GameCard game={game} />
+                        </div>
+                    ))}
+                </div>
             </TabsContent>
         </Tabs>
       </section>
@@ -189,7 +181,7 @@ export default function Home() {
                         </Card>
                     </a>
                 ))}
-                {freeGamesPlaceholders.map((_, index) => (
+                {(freeGamesLoading && freeGames.length === 0 ? freeGamesPlaceholders : []).map((_, index) => (
                     <Card key={`placeholder-${index}`} className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-border/60 bg-secondary/20 min-h-[300px]">
                         <div className="text-center">
                             <p className="text-4xl font-bold text-muted-foreground">¿?</p>
@@ -216,3 +208,5 @@ export default function Home() {
     </>
   );
 }
+
+    
