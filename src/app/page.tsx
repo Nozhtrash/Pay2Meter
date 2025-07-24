@@ -69,7 +69,7 @@ export default function Home() {
     <>
     <div className="container mx-auto px-4 py-12">
        <div className="text-center mb-12">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+        <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
           El Muro de la Vergüenza del Gaming
         </h1>
         <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -82,7 +82,7 @@ export default function Home() {
             <Card className="border-primary/40 bg-secondary/20 hover:border-primary/80 transition-all">
                 <CardContent className="p-6 flex flex-col md:flex-row items-center gap-6">
                     <div className="flex-1 text-center md:text-left">
-                        <h2 className="font-headline text-2xl font-bold text-white">Último Análisis del Editor</h2>
+                        <h2 className="font-headline text-2xl font-bold">Último Análisis del Editor</h2>
                         <p className="text-lg text-primary">{latestPost.title}</p>
                         <p className="text-sm text-muted-foreground">
                             Publicado el {format(latestPost.date.toDate(), 'dd/MM/yyyy')}

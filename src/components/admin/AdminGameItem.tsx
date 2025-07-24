@@ -61,14 +61,14 @@ export function AdminGameItem({ game }: AdminGameItemProps) {
                 </div>
             </CardHeader>
             <CardContent className="flex-1 p-4">
-                <CardTitle className="font-headline text-lg text-white truncate">{game.name}</CardTitle>
+                <CardTitle className="font-headline text-lg truncate">{game.name}</CardTitle>
                 <CardDescription className="text-sm">{game.developer}</CardDescription>
             </CardContent>
             <CardFooter className="flex flex-col items-start gap-4 p-4 pt-0">
                 <div className="w-full space-y-2">
                     <div className="flex justify-between items-center">
                         <label className="text-sm text-muted-foreground">Puntuación de Abusividad</label>
-                        <span className="font-bold text-lg text-white">{rating}%</span>
+                        <span className="font-bold text-lg">{rating}%</span>
                     </div>
                     <Slider
                         value={[rating]}

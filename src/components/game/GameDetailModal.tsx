@@ -88,7 +88,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-4xl max-h-[90vh] bg-card rounded-lg shadow-xl text-white overflow-hidden"
+        className="relative w-full max-w-4xl max-h-[90vh] bg-card rounded-lg shadow-xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white z-10">
@@ -146,7 +146,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
                      <div>
                         <div className="flex justify-between items-center mb-2">
                             <label className="text-sm font-medium">¿Qué tan abusivo lo consideras?</label>
-                            <span className="font-bold text-lg text-white">{userAbuseRating}%</span>
+                            <span className="font-bold text-lg">{userAbuseRating}%</span>
                         </div>
                         <Slider
                             value={[userAbuseRating]}

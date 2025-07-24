@@ -30,7 +30,7 @@ export function GameCard({ game }: GameCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-1 p-4">
-          <CardTitle className="font-headline text-xl text-white">{game.name}</CardTitle>
+          <CardTitle className="font-headline text-xl">{game.name}</CardTitle>
           <CardDescription className="mt-1 text-sm">{game.developer}</CardDescription>
           <p className="mt-2 text-xs text-muted-foreground line-clamp-3">{game.critic}</p>
         </CardContent>
@@ -39,12 +39,12 @@ export function GameCard({ game }: GameCardProps) {
         <div className="flex w-full items-center justify-between text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
                 <Flame className="h-5 w-5 text-destructive" />
-                <span className="font-bold text-lg text-white">{game.abuseRating?.toFixed(0) ?? '???'}%</span>
+                <span className="font-bold text-lg">{game.abuseRating?.toFixed(0) ?? '???'}%</span>
                 <span className="text-xs">(Abusividad)</span>
             </div>
             <div className="flex items-center gap-1">
                 <Star className="h-5 w-5 text-amber-400" />
-                 <span className="font-bold text-lg text-white">{game.reviewCount.toLocaleString()}</span>
+                 <span className="font-bold text-lg">{game.reviewCount.toLocaleString()}</span>
                  <span className="text-xs">(Opiniones)</span>
             </div>
         </div>

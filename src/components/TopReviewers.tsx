@@ -38,7 +38,7 @@ const ReviewerItem = ({ reviewer, rankNumber }: ReviewerItemProps) => (
       </AvatarFallback>
     </Avatar>
     <div className="flex-1 overflow-hidden">
-      <p className="font-bold truncate text-white">{reviewer.nickname}</p>
+      <p className="font-bold truncate">{reviewer.nickname}</p>
       <p className="text-sm text-muted-foreground">{reviewer.rank}</p>
     </div>
     <div className="flex items-center gap-1.5 text-primary">

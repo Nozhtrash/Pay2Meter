@@ -74,11 +74,11 @@ export default function ProfilePage() {
             <div className="grid grid-cols-2 gap-4 text-center">
                 <div className="rounded-lg bg-secondary p-4">
                     <h4 className="flex items-center justify-center gap-2 text-sm font-semibold text-muted-foreground"><Shield/>Rango</h4>
-                    <p className="text-2xl font-bold text-white">{rank}</p>
+                    <p className="text-2xl font-bold">{rank}</p>
                 </div>
                  <div className="rounded-lg bg-secondary p-4">
                     <h4 className="flex items-center justify-center gap-2 text-sm font-semibold text-muted-foreground"><Star/>Puntos</h4>
-                    <p className="text-2xl font-bold text-white">{points}</p>
+                    <p className="text-2xl font-bold">{points}</p>
                 </div>
             </div>
 
