@@ -13,6 +13,8 @@ const customJestConfig = {
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
+  // lucide-react is published as an ES module and needs to be transformed for Jest
+  transformIgnorePatterns: ['/node_modules/(?!lucide-react)/'],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
