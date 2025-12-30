@@ -1,13 +1,11 @@
 
-"use client";
-
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Header from "@/components/layout/Header";
 import { Toaster } from "@/components/ui/toaster";
+import ThemeScript from "@/components/layout/ThemeScript";
 import "./globals.css";
-import { useEffect }from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,33 +17,33 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-// Metadata can't be exported from a client component.
-// We can keep it here, but it won't be used.
-// For it to be used, this would need to be a server component
-// and the theme logic would need to be in a separate client component.
-// export const metadata: Metadata = {
-//   title: "Pay2Meter",
-//   description: "Exponiendo los peores juegos Pay2Win. Opiniones, valoraciones y transparencia para los jugadores.",
-// };
+export const metadata: Metadata = {
+  title: {
+    default: "Pay2Meter",
+    template: "%s | Pay2Meter",
+  },
+  description:
+    "Exponiendo los peores juegos Pay2Win. Opiniones, valoraciones y transparencia para los jugadores.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   useEffect(() => {
-    const theme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}>
+        <ThemeScript />
         <AuthProvider>
           <div className="relative flex min-h-screen flex-col">
             <Header />
